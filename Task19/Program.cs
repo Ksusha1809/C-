@@ -4,21 +4,27 @@
 //12821 -> да
 //23432 -> да
 
-Console.Write("Введите целое число:   ");
-string number = Console.ReadLine();
-int length = number.Length;
-string txtToCheck = number.Replace(" ","");
-
-bool IsPalindrome()
+internal class Program
 {
-    for (int i = 0; i < length / 2; i++)
-        while (number[i] == number[length - 1])
-        {
-            return true;
-        }
-    return false;
-}
+    private static void Main(string[] args)
+    {
+        Console.Write("Введите целое число:   ");
+        string number = Console.ReadLine();
+        int length = number.Length;
+        string txtToCheck = number.Replace(" ", "");
 
-if (IsPalindrome()) Console.WriteLine($"Введный текст/число - {number} - является палиндромом");
-else Console.WriteLine($"Число {number} не является палиндромом");
-Console.WriteLine();
+        bool IsPalindrome()
+        {
+            for (int i = 0; i < length / 2; i++)
+                while (number[i] == number[length - 1])
+                {
+                    return true;
+                }
+            return false;
+        }
+
+        if (IsPalindrome()) Console.WriteLine($"Введный текст/число - {number} - является палиндромом");
+        else Console.WriteLine($"Число {number} не является палиндромом");
+        Console.WriteLine();
+    }
+}
